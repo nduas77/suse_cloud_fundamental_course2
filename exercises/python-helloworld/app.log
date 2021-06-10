@@ -1,0 +1,12 @@
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+INFO:app:Metrics request successfull
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2021 11:08:09] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+DEBUG:app:Metrics request successfull
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2021 11:09:58] "GET / HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+DEBUG:app:06/09/2021, 11:14:02, / endpoint was reached
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2021 11:14:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2021 11:14:03] "GET /favicon.ico HTTP/1.1" 404 -
+DEBUG:app:06/09/2021, 11:14:18, /status endpoint was reached
+INFO:werkzeug:127.0.0.1 - - [09/Jun/2021 11:14:18] "GET /status HTTP/1.1" 200 -
