@@ -78,3 +78,45 @@ kubectl apply -f deploy.yaml
 kubectl get deploy -n demo2
 kubectl get po -n demo2
 ````
+
+````
+* https://argoproj.github.io/argo-cd/getting_started/#1-install-argo-cd
+* https://argoproj.github.io/argo-cd/getting_started/
+
+kubectl get po -n argocd
+kubectl get svc -n argocd
+kubectl get svc -n argocd argocd-server -o yaml
+kubectl get svc -n argocd argocd-server -o yaml > argocd-nodeport.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  name: argocd-server-nodeport
+  namespace: argocd
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30007
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 8080
+    nodePort: 30008
+  selector:
+    app.kubernetes.io/name: argocd-server
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
+
+kubectl apply -f argocd-nodeport.yaml
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+````
