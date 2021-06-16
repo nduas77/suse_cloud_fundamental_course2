@@ -3,6 +3,8 @@
 * https://cloud.ibm.com/docs/blockchain-sw?topic=blockchain-sw-Removing-k8
 * https://hub.docker.com/u/pixelpotato
 * https://k3s.io/
+* https://www.vagrantup.com/docs/synced-folders/basic_usage
+* https://www.vagrantup.com/docs/provisioning/file
 
 ````
 kubectl describe pods | grep -i apparmor_parser

@@ -2,6 +2,9 @@
 ENV["TERM"]="linux"
 
 Vagrant.configure("2") do |config|
+
+  # copy some files
+  config.vm.synced_folder "/Users/Willy/Documents/GitHub/suse_cloud_fund_course/solutions/helm", "/home/vagrant/helm", create: true
   
   # set the image for the vagrant box
   config.vm.box = "opensuse/Leap-15.2.x86_64"
